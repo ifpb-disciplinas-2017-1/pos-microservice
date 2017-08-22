@@ -1,5 +1,4 @@
-# POC-TCC-Docker-NodeJS
-POC do meu TCC - REST API em NodeJS e Mongo rodando em Docker. 
+Este projeto consiste de uma implementação de um microserviço usando NodeJs, Mongo e distribuido com Docker.
 
 # How to
 

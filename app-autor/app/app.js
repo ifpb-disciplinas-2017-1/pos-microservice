@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-require('./models/autor')
+require('./models/autor');
 require('./routes')(app);
 
 //Porta de escuta do servidor
