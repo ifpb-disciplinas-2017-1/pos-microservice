@@ -1,0 +1,5 @@
+.DS_Store
+app-autor/data
+app-autor/data/*
+app-autor/app/node_modules/
+app-autor/app/node_modules/*
