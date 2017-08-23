@@ -1,0 +1,27 @@
+version: '2'
+services:
+  postgres:
+    container_name: postgres-livro
+    image: ricardojob/db-livro
+    build: ./postgres
+    ports:
+     - "5433:5432"
+    expose:
+     - 5433   
+    volumes:
+     - postgres-volume-db:/var/lib/postgresql/data/
+  web:
+    container_name: app-livro
+    build: .
+    image: ricardojob/livro
+    ports:
+     - "8083:8080"
+    links:
+     - "postgres:banco"
+#networks:
+#  default:
+#    external:
+#      name: venda_default
+volumes:
+    postgres-volume-db:
+      driver: local

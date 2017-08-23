@@ -45,6 +45,6 @@ Este projeto consiste de uma implementação de um microserviço usando NodeJs, 
 ```
 ### Agradecimentos 
 
-https://github.com/brittneykernan/noderest-presentation
-https://github.com/msfidelis/POC-TCC-Docker-NodeJS
-http://bigspaceship.github.io/blog/2014/05/14/how-to-create-a-rest-api-with-node-dot-js/
+* https://github.com/brittneykernan/noderest-presentation
+* https://github.com/msfidelis/POC-TCC-Docker-NodeJS
+* http://bigspaceship.github.io/blog/2014/05/14/how-to-create-a-rest-api-with-node-dot-js/
