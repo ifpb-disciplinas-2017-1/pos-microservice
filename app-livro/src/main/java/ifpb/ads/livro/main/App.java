@@ -41,6 +41,7 @@ public class App {
         app.setDefaultProperties(myProps);
         app.run(args);
 
+
     }
 
     @Bean

@@ -1,7 +1,5 @@
 package ifpb.ads.livro.domain;
 
-import java.util.ArrayList;
-import java.util.stream.Stream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 @CrossOrigin
 @RestController
@@ -20,11 +19,26 @@ import org.springframework.web.bind.annotation.RestController;
 public class LivroController {
 
     @Autowired
-    LivroRepository livros;
+    private LivroRepository livros;
+
+    public static final String REST_SERVICE_URI = "http://app-autor:8080/autor";
 
     @RequestMapping(method = RequestMethod.GET, produces = {"application/json; charset=UTF-8"})
     public Livro[] todosOsLivros() {
         return livros.findAll().toArray(new Livro[0]);
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "autores", produces = {"application/json; charset=UTF-8"})
+    public ResponseEntity getLivros() {
+
+        RestTemplate restTemplate = new RestTemplate();
+        String autor = restTemplate.getForObject(REST_SERVICE_URI, String.class);
+        System.out.println(autor);
+        if (autor != null) {
+            return new ResponseEntity<>(autor, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+        }
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "{id}", produces = {"application/json; charset=UTF-8"})
@@ -51,8 +65,8 @@ public class LivroController {
         return livros.getAutoresDoLivro(id).toArray(new AutorId[0]);
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "{id}/autores/{autor}", produces = {"application/json; charset=UTF-8"})
-    public ResponseEntity addAutores(@PathVariable long id, @PathVariable String autor) {
+    @RequestMapping(method = RequestMethod.POST, value = "{id}/autores")
+    public ResponseEntity addAutores(@PathVariable long id, @RequestBody String autor) {
         Livro livro = livros.findOne(id);
         if (livro != null) {
             livro.adicionarAutor(AutorId.of(autor));

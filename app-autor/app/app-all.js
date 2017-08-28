@@ -34,11 +34,8 @@ app.get("/api", function (req, res) {
         updated_at: false
     };
     Model.find({}, autorProjection, function (err, todos) {
-        // Model.find(function(err, todos) {
-        if (err)
-            return next(err);
+        if (err) return next(err);
         res.json(todos);
-        // }
     });
 });
 
@@ -46,8 +43,7 @@ app.get("/api", function (req, res) {
 app.get("/api/:nome?", function (req, res) {
     var nome = req.params.nome;
     Model.find({'nome': nome}, function (err, regs) {
-        if (err) {
-            // console.log(err);
+        if (err) { 
             res.send(err);
         } else {
             res.json(regs);

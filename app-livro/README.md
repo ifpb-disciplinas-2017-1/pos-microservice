@@ -15,7 +15,7 @@ Este projeto consiste de uma implementação de um microserviço usando SpringBo
   # docker-compose up -d 
 ```
 
-### url (configurável no `docker-compose.yml`)
+### url
 
 ```
   http://localhost:8083
@@ -44,4 +44,5 @@ Este projeto consiste de uma implementação de um microserviço usando SpringBo
 ```
  http://localhost:8083/livro/{id: long}/autores/{autor: long}
 ```
+### Agradecimentos 
 

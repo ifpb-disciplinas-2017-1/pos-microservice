@@ -18,10 +18,10 @@ services:
      - "8083:8080"
     links:
      - "postgres:banco"
-#networks:
-#  default:
-#    external:
-#      name: venda_default
+networks:
+  default:
+    external:
+      name: reserva
 volumes:
     postgres-volume-db:
       driver: local
