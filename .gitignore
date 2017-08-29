@@ -6,3 +6,5 @@ app-autor/app/node_modules/*
 /cliente/target/
 /app-livro/nbactions.xml
 /app-livro/target/
+/app-reserva/target/
+/app-reserva/nbactions.xml
