@@ -12,10 +12,6 @@
     <modules>
         <module>app-autor</module>
         <module>app-livro</module>
-<<<<<<< HEAD
-        <!--<module>app-reserva</module>-->
-=======
->>>>>>> c774bc0787ae9d08094ae21a9a11032c06575df1
         <module>app-reserva</module>
     </modules>
 </project>
