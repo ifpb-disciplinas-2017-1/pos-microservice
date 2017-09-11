@@ -13,5 +13,6 @@
         <module>app-autor</module>
         <module>app-livro</module>
         <!--<module>app-reserva</module>-->
+        <module>app-reserva</module>
     </modules>
 </project>

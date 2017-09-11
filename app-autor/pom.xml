@@ -17,6 +17,7 @@
     </properties>
 
     <build>
+        
         <plugins>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -40,6 +41,9 @@
                 </executions>
             </plugin>
         </plugins>
+        <!--<sourceDirectory>app</sourceDirectory>-->
+        <scriptSourceDirectory>app</scriptSourceDirectory>
+
     </build>
 
 </project>
