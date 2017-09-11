@@ -1,0 +1,29 @@
+version: "2"
+services:
+  postgres:
+    container_name: postgres-reserva
+    image: pedroarthur/db-reserva
+    build: ./postgres
+    ports:
+     - "5434:5432"
+    expose:
+     - 5434   
+    volumes:
+     - postgres-volume-db:/var/lib/postgresql/data/
+  web:
+    container_name: app-reserva
+    build: .
+    image: pedroarthur/reserva
+    ports:
+     - "8086:8080"
+    links:
+     - "postgres:banco"
+    expose:
+     - 8086
+networks:
+  default:
+    external:
+      name: reserva
+volumes:
+    postgres-volume-db:
+      driver: local

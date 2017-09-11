@@ -1,10 +1,13 @@
 .DS_Store
+**/target/
 app-autor/data
 app-autor/data/*
 app-autor/app/node_modules/
 app-autor/app/nbproject/
 app-autor/app/node_modules/*
-/cliente/target/
 /app-livro/nbactions.xml
 /app-livro/target/
 /app-autor/nbproject/
+/app-reserva/target/
+/app-reserva/nbactions.xml
+/cliente/target/
